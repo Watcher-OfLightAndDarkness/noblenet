@@ -1,26 +1,53 @@
-# Dependencies and AdonisJS build
-node_modules
-build
+# Dependencies and build
+node_modules/
+build/
 tmp/*
 !tmp/.gitkeep
 
-# Secrets
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage
+*.lcov
+.nyc_output
+
+# Dependency dirs
+jspm_packages/
+web_modules/
+
+# Cache
+.cache
+.parcel-cache
+.eslintcache
+.stylelintcache
+
+# Env files (IMPORTANT)
 .env
-.env.local
-.env.production.local
-.env.development.local
+.env.*
+!.env.example
 
-# Frontend assets compiled code
-public/assets
+# Framework outputs
+.next
+out
+.nuxt
+dist
+.svelte-kit/
 
-# Build tools specific
-npm-debug.log
-yarn-error.log
-
-# Editors specific
-.fleet
-.idea
-.vscode
-
-# Platform specific
+# Misc
 .DS_Store
+
+# Editors
+.vscode
+.idea
+.fleet
