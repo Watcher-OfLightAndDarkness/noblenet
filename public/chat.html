@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fief Chat | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/chat.css">
+</head>
+<body>
+  <header class="chat-header">
+    <div class="header-left">
+      <a href="/" class="logo">
+        <span class="logo-crest">⚔️</span>
+        <span class="logo-text">Feudal Forum</span>
+      </a>
+      <span class="header-separator">|</span>
+      <h2 id="groupName" class="group-title">🏰 Loading...</h2>
+    </div>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="chat-container">
+    <div class="chat-messages" id="messages">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Summoning ravens...</div>
+      </div>
+    </div>
+  </main>
+
+  <form class="chat-input-container" onsubmit="sendMessage(event)">
+    <div class="chat-input-wrapper">
+      <input type="text" id="messageInput" placeholder="Send a raven to your fellow nobles..." autocomplete="off" maxlength="1000">
+      <button type="submit" class="send-btn">
+        <span>📜</span>
+        <span>Send</span>
+      </button>
+    </div>
+  </form>
+
+  <script src="/public/js/chat.js"></script>
+</body>
+</html>

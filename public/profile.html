@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/profile.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo"><span>⚔️ Feudal Forum</span></a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="container" id="content">
+    <div class="loading">Summoning your scrolls...</div>
+  </main>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeEditModal()">&times;</span>
+      <h2>Edit Profile</h2>
+      <input type="text" id="editUsername" placeholder="Username">
+      <input type="email" id="editEmail" placeholder="Email">
+      <select id="editGender">
+        <option value="">Prefer not to say</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Non-binary">Non-binary</option>
+      </select>
+      <hr>
+      <input type="password" id="currentPassword" placeholder="Current Password (required for password change)">
+      <input type="password" id="newPassword" placeholder="New Password (optional)">
+      <button class="edit-btn" onclick="saveProfile()">Save Changes</button>
+    </div>
+  </div>
+
+  <!-- Avatar Upload Modal -->
+  <div class="modal" id="avatarModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeAvatarModal()">&times;</span>
+      <h2>Update Profile Image</h2>
+      <input type="file" id="avatarInput" accept="image/*">
+      <button class="edit-btn" onclick="uploadAvatar()">Upload</button>
+    </div>
+  </div>
+
+  <script src="/public/js/profile.js"></script>
+</body>
+</html>

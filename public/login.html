@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter the Realm | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/auth.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <a href="/" class="back-link">← Back to Gates</a>
+
+    <div class="auth-container">
+      <div class="crest">⚔️</div>
+      <h1>Enter the Realm</h1>
+      <p class="subtitle">Welcome back, noble</p>
+
+      <div class="error" id="errorMsg"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Royal Decree (Email)</label>
+          <input type="email" id="email" required placeholder="thy@kingdom.com" autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Secret Phrase</label>
+          <input type="password" id="password" required placeholder="••••••••" autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn-primary">
+          <span class="btn-icon">🚪</span>
+          <span>Pass the Gates</span>
+        </button>
+      </form>
+
+      <p class="auth-link">
+        New to the realm? <a href="register.html">Pledge Allegiance</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="/public/js/login.js"></script>
+</body>
+</html>

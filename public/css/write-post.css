@@ -1,0 +1,185 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Georgia', serif;
+      background: #0f0f1e;
+      color: #eee;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #16213e;
+      border-bottom: 3px solid #e94560;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #e94560;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .back-btn {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-btn:hover { color: #e94560; }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .form-card {
+      background: #16213e;
+      border: 2px solid #533483;
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #e94560;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #a0a0a0;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem;
+      background: #0f3460;
+      border: 2px solid #533483;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+      font-family: 'Georgia', serif;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #e94560;
+    }
+
+    textarea {
+      min-height: 200px;
+      resize: vertical;
+    }
+
+    .char-count {
+      text-align: right;
+      color: #a0a0a0;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    .rank-info {
+      background: #0f3460;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid #e94560;
+    }
+
+    .rank-info h4 {
+      color: #e94560;
+      margin-bottom: 0.5rem;
+    }
+
+    .media-upload {
+      border: 2px dashed #533483;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+
+    .media-upload:hover {
+      border-color: #e94560;
+    }
+
+    .media-upload.hidden {
+      display: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: #e94560;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+    }
+
+    .submit-btn:hover {
+      background: #ff6b6b;
+    }
+
+    .submit-btn:disabled {
+      background: #533483;
+      cursor: not-allowed;
+    }
+
+    .error {
+      background: #e94560;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .success {
+      background: #2ecc71;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .pin-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #0f3460;
+      border-radius: 5px;
+    }
+
+    .pin-option input[type="checkbox"] {
+      width: auto;
+    }
+
+    .cost-info {
+      color: #e94560;
+      font-size: 0.9rem;
+    }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decree | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/post.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span>⚔️ Feudal Forum</span>
+    </a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="container" id="mainContent">
+    <div class="loading">Summoning decree...</div>
+  </main>
+  <div class="author-info">
+    <div class="author-name-row">
+      <span class="post-author" onclick="location.href='profile.html?user=${post.author.username}'">
+        ${post.author.username}
+      </span>
+      <span class="rank-badge rank-${post.author.rank}">${post.author.rank}</span>
+    </div>
+  </div>
+  <script src="/public/js/post.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Georgia', serif;
+      background: #0f0f1e;
+      color: #eee;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #16213e;
+      border-bottom: 3px solid #e94560;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #e94560;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .back-btn {
+      color: #a0a0a0;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-btn:hover { color: #e94560; }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .group-header {
+      background: #16213e;
+      border: 2px solid #9b59b6;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .group-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .group-name {
+      font-size: 2rem;
+      color: #9b59b6;
+      margin-bottom: 0.5rem;
+    }
+
+    .group-meta {
+      color: #a0a0a0;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .group-desc {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .group-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e94560;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #a0a0a0;
+      text-transform: uppercase;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: #9b59b6;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #8e44ad;
+    }
+
+    .btn-secondary {
+      background: #0f3460;
+      color: #fff;
+      border: 2px solid #533483;
+    }
+
+    .btn-secondary:hover {
+      border-color: #e94560;
+    }
+
+    .btn-danger {
+      background: #e94560;
+      color: #fff;
+    }
+
+    .posts-section {
+      margin-top: 2rem;
+    }
+
+    .section-title {
+      color: #e94560;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .post-card {
+      background: #16213e;
+      border: 1px solid #533483;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .post-card:hover {
+      transform: translateX(5px);
+      border-color: #e94560;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.85rem;
+      color: #a0a0a0;
+    }
+
+    .post-author {
+      color: #fff;
+    }
+
+    .post-rank {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 5px;
+    }
+
+    .post-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .post-excerpt {
+      color: #a0a0a0;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .post-footer {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .vote-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+      color: #a0a0a0;
+    }
+
+    .vote-btn:hover { color: #e94560; }
+
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: #533483;
+    }
+
+    .error {
+      text-align: center;
+      padding: 3rem;
+      color: #e94560;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 3rem;
+      color: #a0a0a0;
+    }
+
+    .hidden { display: none !important; }
+
+    /* Rank colors */
+    .rank-Citizen { background: #808080; }
+    .rank-Baron { background: #cd7f32; }
+    .rank-Viscount { background: #c0c0c0; color: #1a1a2e; }
+    .rank-Count { background: #ffd700; color: #1a1a2e; }
+    .rank-Marquess { background: #e74c3c; }
+    .rank-Duke { background: #9b59b6; }
+    .rank-King { background: #f39c12; }
+    .rank-Emperor { background: #e94560; }

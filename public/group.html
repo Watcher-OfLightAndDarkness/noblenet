@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fief | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/group.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="logo-crest">⚔️</span>
+      <span class="logo-text">Feudal Forum</span>
+    </a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="container" id="mainContent">
+    <div class="loading">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Summoning fief details...</div>
+    </div>
+  </main>
+
+  <!-- Invite Modal -->
+  <div class="modal" id="inviteModal">
+    <div class="modal-content">
+      <h3>📨 Invite to Fief</h3>
+      <input type="text" id="inviteSearch" placeholder="Search by noble name..." autocomplete="off">
+      <div id="searchResults" class="search-results"></div>
+      <button class="cancel-btn" onclick="closeInviteModal()">Cancel</button>
+    </div>
+  </div>
+<div class="owner-info">
+  <span class="owner-label">Founded by</span>
+  <div class="owner-name-row">
+    <span class="owner-name" onclick="location.href='profile.html?user=${group.owner.username}'">${group.owner.username}</span>
+    <span class="rank-badge rank-${group.owner.rank}">${group.owner.rank}</span>
+  </div>
+</div>
+  <script src="/public/js/group.js"></script>
+</body>
+</html>

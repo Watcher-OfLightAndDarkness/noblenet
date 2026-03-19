@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/index.css">
+  <title>Feudal Forum</title>
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="logo-crest">⚔️</span>
+      <span class="logo-text">Feudal Forum</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop" id="guestNav">
+      <a href="login.html" class="nav-btn">Enter Realm</a>
+      <a href="register.html" class="nav-btn primary">Join Kingdom</a>
+    </nav>
+
+    <nav class="nav-desktop hidden" id="userNavDesktop">
+      <a href="/royal-advisor.html" class="nav-btn advisor-btn" title="Royal Advisor">🤖</a>
+      <a href="/creator-panel.html" class="nav-btn throne-btn" title="Throne Room">👑</a>
+      <a href="executions.html" id="judgmentLinkDesktop" class="nav-btn judgment-btn" style="display: none;" title="Hall of Judgment">⚔️</a>
+
+      <div class="groups-dropdown" id="groupsDropdown">
+        <button class="groups-btn" onclick="toggleGroups()">
+          🏰 <span class="group-count" id="groupCount">0</span>
+        </button>
+        <div class="groups-menu" id="groupsMenu">
+          <div class="loading">Summoning fiefs...</div>
+        </div>
+      </div>
+
+      <div class="user-profile" onclick="location.href='profile.html'">
+        <img src="/default-avatar.png" alt="Profile" class="nav-avatar" id="navAvatar">
+        <div class="user-info">
+          <span class="nav-username" id="navUsername">User</span>
+          <span class="nav-rank" id="navRank">Citizen</span>
+        </div>
+      </div>
+      <button class="nav-btn logout-btn" onclick="logout()" title="Logout">🚪</button>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="guestNavMobile">
+      <a href="login.html" class="nav-btn">Enter</a>
+      <a href="register.html" class="nav-btn primary">Join</a>
+    </nav>
+
+    <nav class="nav-mobile hidden" id="userNavMobile">
+      <button class="hamburger-btn" onclick="toggleMobileMenu()" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span>Menu</span>
+      <button class="close-menu" onclick="toggleMobileMenu()">×</button>
+    </div>
+
+    <div class="mobile-user-section" id="mobileUserSection">
+      <img src="/default-avatar.png" alt="Profile" class="mobile-avatar" id="mobileAvatar">
+      <div class="mobile-user-info">
+        <span class="mobile-username" id="mobileUsername">User</span>
+        <span class="mobile-rank" id="mobileRank">Citizen</span>
+      </div>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="/royal-advisor.html" class="mobile-nav-link">
+        <span class="mobile-link-icon">🤖</span>
+        <span>Royal Advisor</span>
+      </a>
+      <a href="/creator-panel.html" class="mobile-nav-link">
+        <span class="mobile-link-icon">👑</span>
+        <span>Throne Room</span>
+      </a>
+      <a href="executions.html" id="judgmentLinkMobile" class="mobile-nav-link" style="display: none;">
+        <span class="mobile-link-icon">⚔️</span>
+        <span>Hall of Judgment</span>
+      </a>
+      <a href="profile.html" class="mobile-nav-link">
+        <span class="mobile-link-icon">👤</span>
+        <span>My Profile</span>
+      </a>
+      <div class="mobile-divider"></div>
+      <div class="mobile-nav-link" onclick="showMobileGroups()">
+        <span class="mobile-link-icon">🏰</span>
+        <span>My Fiefs <span class="mobile-group-count" id="mobileGroupCount">0</span></span>
+      </div>
+      <div class="mobile-groups-list" id="mobileGroupsList"></div>
+      <div class="mobile-divider"></div>
+      <button class="mobile-logout" onclick="logout()">
+        <span class="mobile-link-icon">🚪</span>
+        <span>Abdicate (Logout)</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="hero-section">
+      <h1 class="hero-title">The Realm Awaits</h1>
+      <p class="hero-subtitle">Rise through the ranks, forge alliances, and shape the kingdom</p>
+    </div>
+
+    <div class="action-bar" id="actionBar">
+      <div class="create-post-box disabled" id="createPostBox" onclick="handleCreateClick()">
+        <div class="create-post-icon">📜</div>
+        <div class="create-post-text" id="createPostText">Enter the realm to make a decree...</div>
+        <div class="create-post-arrow">→</div>
+      </div>
+      <button class="create-group-btn hidden" id="createGroupBtn" onclick="location.href='create-group.html'">
+        <span>🏰</span>
+        <span>Create Fief</span>
+      </button>
+    </div>
+
+    <div class="posts-feed" id="postsFeed">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Summoning scrolls from the kingdom...</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/public/js/index.js"></script>
+</body>
+</html>

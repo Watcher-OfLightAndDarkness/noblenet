@@ -1,0 +1,7 @@
+.adonisjs
+node_modules
+build
+start
+config
+app
+public/js

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Establish Fief | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/forms.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="logo-crest">⚔️</span>
+      <span class="logo-text">Feudal Forum</span>
+    </a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <div class="form-icon">🏰</div>
+        <h1>Establish a Fief</h1>
+        <p class="subtitle">Create your own domain within the kingdom</p>
+      </div>
+
+      <div class="alert error" id="errorMsg"></div>
+      <div class="alert success" id="successMsg"></div>
+
+      <div class="info-box" id="requirements">
+        <div class="info-header">
+          <span class="info-icon">⚡</span>
+          <span>Requirements</span>
+        </div>
+        <ul>
+          <li>Rank: <strong>Count</strong> or higher</li>
+          <li>Name: 3-64 characters, unique</li>
+          <li>Description: Optional, max 500 characters</li>
+        </ul>
+      </div>
+
+      <form id="groupForm">
+        <div class="form-group">
+          <label for="name">Fief Name</label>
+          <input type="text" id="name" maxlength="64" required placeholder="e.g., The Iron Legion" autocomplete="off">
+          <div class="char-count"><span id="nameCount">0</span>/64</div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description (Optional)</label>
+          <textarea id="description" maxlength="500" rows="4" placeholder="Describe your fief's purpose and laws..."></textarea>
+          <div class="char-count"><span id="descCount">0</span>/500</div>
+        </div>
+
+        <div class="form-group">
+          <label>Visibility</label>
+          <div class="option-cards">
+            <label class="option-card">
+              <input type="radio" name="visibility" value="public" checked>
+              <div class="card-content">
+                <span class="card-icon">🌍</span>
+                <div class="card-details">
+                  <strong>Public</strong>
+                  <small>Anyone can find and join your fief</small>
+                </div>
+              </div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="visibility" value="private">
+              <div class="card-content">
+                <span class="card-icon">🔒</span>
+                <div class="card-details">
+                  <strong>Private</strong>
+                  <small>Invitation required to join</small>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn">
+          <span class="btn-icon">⚔️</span>
+          <span>Establish Fief</span>
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script src="/public/js/create-group.js"></script>
+</body>
+</html>

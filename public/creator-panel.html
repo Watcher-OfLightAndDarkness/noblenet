@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Throne Room | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/creator-panel.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="logo-crest">⚔️</span>
+      <span class="logo-text">Feudal Forum</span>
+    </a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="container">
+    <div class="throne-room">
+      <div class="throne-header">
+        <div class="throne-icon">👑</div>
+        <h1>Throne Room</h1>
+        <p class="subtitle">Bestow blessings upon the realm</p>
+      </div>
+
+      <div class="powers-grid">
+        <!-- Search Section -->
+        <div class="power-card search-section">
+          <div class="card-header">
+            <span class="card-icon">🔍</span>
+            <h2>Find Noble</h2>
+          </div>
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for a noble..." autocomplete="off">
+            <span class="search-icon">🔎</span>
+          </div>
+          <div class="search-hint">Type at least 2 characters to search</div>
+          <div class="users-list" id="usersList"></div>
+        </div>
+
+        <!-- Action Panel -->
+        <div class="power-card action-panel hidden" id="actionPanel">
+          <div class="card-header">
+            <span class="card-icon">⚡</span>
+            <h2>Bestow Blessing</h2>
+          </div>
+
+          <div class="selected-user" id="selectedUser">
+            <img src="" alt="" class="selected-avatar" id="selectedAvatar">
+            <div class="selected-info">
+              <div class="selected-rank" id="selectedRank"></div>
+              <div class="selected-name" id="selectedName"></div>
+              <div class="selected-points">
+                <span class="points-label">Current Treasury:</span>
+                <span class="points-value" id="currentPoints"></span> points
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="blessingType">Blessing Type</label>
+            <div class="select-wrapper">
+              <select id="blessingType" onchange="onBlessingTypeChange()">
+                <option value="">Choose blessing...</option>
+                <option value="points" id="pointsOption">💰 Grant Points</option>
+                <option value="rank" id="rankOption">⚔️ Set Rank (Creator Only)</option>
+                <option value="emperor" id="emperorOption">👑 Crown as Emperor</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Points Input -->
+          <div class="form-group points-input hidden" id="pointsGroup">
+            <label for="pointsAmount">Amount of Points</label>
+            <input type="number" id="pointsAmount" min="1" placeholder="Enter amount...">
+            <div class="quick-amounts">
+              <button type="button" onclick="setPoints(100)">100</button>
+              <button type="button" onclick="setPoints(500)">500</button>
+              <button type="button" onclick="setPoints(1000)">1k</button>
+              <button type="button" onclick="setPoints(5000)">5k</button>
+              <button type="button" onclick="setPoints(10000)">10k</button>
+              <button type="button" onclick="setPoints(100000)">100k</button>
+            </div>
+          </div>
+
+          <!-- Rank Selection -->
+          <div class="form-group rank-input hidden" id="rankGroup">
+            <label for="rankSelect">Select Rank</label>
+            <div class="select-wrapper">
+              <select id="rankSelect">
+                <option value="">Choose rank...</option>
+                <option value="Citizen">Citizen</option>
+                <option value="Baron">Baron</option>
+                <option value="Viscount">Viscount</option>
+                <option value="Count">Count</option>
+                <option value="Marquess">Marquess</option>
+                <option value="Duke">Duke</option>
+                <option value="King">King</option>
+                <option value="Emperor">Emperor</option>
+              </select>
+            </div>
+            <div class="warning-box">
+              <span class="warning-icon">⚠️</span>
+              <span>This will change <strong id="rankTarget"></strong>'s rank immediately!</span>
+            </div>
+          </div>
+
+          <!-- Emperor Confirmation -->
+          <div class="form-group emperor-warning hidden" id="emperorGroup">
+            <div class="warning-box danger">
+              <span class="warning-icon">👑</span>
+              <span>This will crown <strong id="emperorTarget"></strong> as <strong>Emperor</strong> of the realm!</span>
+            </div>
+          </div>
+
+          <button class="bestow-btn" id="bestowBtn" onclick="bestowBlessing()" disabled>
+            <span class="btn-icon">✨</span>
+            <span>Bestow Blessing</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay hidden" id="successModal">
+    <div class="modal-content">
+      <div class="success-animation">
+        <div class="success-ring"></div>
+        <div class="success-icon">✨</div>
+      </div>
+      <h2>Blessing Bestowed!</h2>
+      <p id="successMessage"></p>
+      <button class="modal-btn" onclick="closeSuccessModal()">Continue</button>
+    </div>
+  </div>
+
+  <script src="/public/js/creator-panel.js"></script>
+</body>
+</html>

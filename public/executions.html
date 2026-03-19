@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperial Judgment | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/executions.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="logo-crest">⚔️</span>
+      <span class="logo-text">Feudal Forum</span>
+    </a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="container">
+    <div class="judgment-hall">
+      <div class="hall-header">
+        <div class="hall-icon">🏛️</div>
+        <h1>Hall of Judgment</h1>
+        <p class="subtitle">Pass sentence upon the nobles</p>
+      </div>
+
+      <div class="search-section">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search for a noble to judge..." autocomplete="off">
+          <span class="search-icon">🔍</span>
+        </div>
+        <div class="search-hint">Type at least 2 characters to search the realm</div>
+      </div>
+
+      <div class="users-grid" id="usersGrid">
+        <div class="loading-state">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Awaiting your command...</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tooltip -->
+  <div class="user-tooltip hidden" id="userTooltip">
+    <div class="tooltip-header">
+      <img src="" alt="" class="tooltip-avatar" id="tooltipAvatar">
+      <div class="tooltip-info">
+        <div class="tooltip-rank" id="tooltipRank"></div>
+        <div class="tooltip-name" id="tooltipName"></div>
+      </div>
+    </div>
+    <div class="tooltip-stats">
+      <div class="stat">
+        <span class="stat-label">Karma</span>
+        <span class="stat-value" id="tooltipKarma"></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Points</span>
+        <span class="stat-value" id="tooltipPoints"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Execution Modal -->
+  <div class="modal-overlay hidden" id="executionModal">
+    <div class="modal-content execution-modal">
+      <div class="modal-header">
+        <span class="modal-icon">⚔️</span>
+        <h2>Pass Sentence</h2>
+      </div>
+
+      <div class="victim-preview" id="victimPreview"></div>
+
+      <div class="form-group">
+        <label for="executionReason">Crime & Reason</label>
+        <textarea id="executionReason" rows="4" placeholder="State the crimes against the realm..." maxlength="500"></textarea>
+        <div class="char-count"><span id="reasonCount">0</span>/500</div>
+      </div>
+
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="isPermanent" checked>
+          <span class="checkmark"></span>
+          <span class="checkbox-text">Permanent Execution</span>
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeModal()">
+          <span>🛡️</span>
+          <span>Spare</span>
+        </button>
+        <button class="btn-danger" onclick="confirmExecution()">
+          <span>⚔️</span>
+          <span>EXECUTE</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Broadcast Modal -->
+  <div class="broadcast-overlay hidden" id="broadcastModal">
+    <audio id="executionSound" src="/sounds/execution-bell.mp3" preload="auto"></audio>
+    <div class="broadcast-content">
+      <div class="axe-animation">🪓</div>
+      <h1>A NOBLE HAS BEEN EXECUTED</h1>
+
+      <div class="victim-display" id="broadcastVictim">
+        <img src="" alt="" class="victim-avatar" id="broadcastAvatar">
+        <div class="victim-info">
+          <span class="victim-rank" id="broadcastRank"></span>
+          <span class="victim-name" id="broadcastName"></span>
+        </div>
+      </div>
+
+      <div class="execution-reason" id="broadcastReason"></div>
+      <div class="execution-by">By decree of the Throne</div>
+
+      <button class="witness-btn" onclick="dismissBroadcast()">
+        <span>⚔️</span>
+        <span>WITNESSED</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="/public/js/executions.js"></script>
+</body>
+</html>

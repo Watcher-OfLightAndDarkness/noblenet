@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pledge Allegiance | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/auth.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <a href="/" class="back-link">← Back to Gates</a>
+
+    <div class="auth-container">
+      <div class="crest">🛡️</div>
+      <h1>Pledge Allegiance</h1>
+      <p class="subtitle">Begin your journey as a Citizen</p>
+
+      <div class="rank-info">
+        <div class="rank-header">
+          <span class="rank-icon">👑</span>
+          <span>Starting Rank: Citizen</span>
+        </div>
+        <ul>
+          <li>3 posts per day limit</li>
+          <li>Text-only content</li>
+          <li>Daily +10 point stipend</li>
+          <li>Earn points through upvotes to rank up!</li>
+        </ul>
+      </div>
+
+      <div class="error" id="errorMsg"></div>
+      <div class="success" id="successMsg"></div>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="username">Noble Name (Username)</label>
+          <input type="text" id="username" required minlength="3" maxlength="32" placeholder="SirLancelot" autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Royal Decree (Email)</label>
+          <input type="email" id="email" required placeholder="thy@kingdom.com" autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Secret Phrase (Password)</label>
+          <input type="password" id="password" required minlength="6" placeholder="Min 6 characters" autocomplete="new-password">
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender (Optional)</label>
+          <select id="gender">
+            <option value="">Prefer not to say</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-success">
+          <span class="btn-icon">⚔️</span>
+          <span>Join the Kingdom</span>
+        </button>
+      </form>
+
+      <p class="auth-link">
+        Already a noble? <a href="login.html">Enter the Realm</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="/public/js/register.js"></script>
+</body>
+</html>

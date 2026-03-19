@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue Decree | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/forms.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="logo-crest">⚔️</span>
+      <span class="logo-text">Feudal Forum</span>
+    </a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <div class="form-icon">📜</div>
+        <h1>Issue a Decree</h1>
+        <p class="subtitle">Make your voice heard across the realm</p>
+      </div>
+
+      <div class="alert error" id="errorMsg"></div>
+      <div class="alert success" id="successMsg"></div>
+
+      <div class="info-box rank-box" id="rankInfo">
+        <div class="info-header">
+          <span class="info-icon">👑</span>
+          <span>Loading privileges...</span>
+        </div>
+      </div>
+
+      <form id="postForm">
+        <div class="form-group">
+          <label for="group">Select Fief (Group)</label>
+          <select id="group" required>
+            <option value="">Choose where to post...</option>
+            <option value="global">🏰 Global Square (All realms)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="title">Decree Title</label>
+          <input type="text" id="title" maxlength="200" required placeholder="Your proclamation..." autocomplete="off">
+          <div class="char-count"><span id="titleCount">0</span>/200</div>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Decree Content</label>
+          <textarea id="content" required rows="8" placeholder="The details of your decree..."></textarea>
+          <div class="char-count"><span id="contentCount">0</span>/<span id="maxContent">500</span></div>
+        </div>
+
+        <div class="media-upload hidden" id="mediaUpload" onclick="document.getElementById('fileInput').click()">
+          <div class="upload-content">
+            <span class="upload-icon">📎</span>
+            <span>Click to attach images (optional)</span>
+            <small>Viscounts and above only</small>
+          </div>
+          <input type="file" id="fileInput" multiple accept="image/*">
+          <div class="file-list" id="fileList"></div>
+        </div>
+
+        <div class="pin-option hidden" id="pinOption">
+          <label class="checkbox-label">
+            <input type="checkbox" id="pinPost">
+            <span class="checkmark"></span>
+            <div class="checkbox-text">
+              <strong>📌 Pin this decree</strong>
+              <span class="cost">Costs <span id="pinCost">100</span> points</span>
+            </div>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn">
+          <span class="btn-icon">📜</span>
+          <span>Publish Decree</span>
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script src="/public/js/write-post.js"></script>
+</body>
+</html>

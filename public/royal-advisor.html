@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Advisor | Feudal Forum</title>
+  <link rel="stylesheet" href="/public/css/royal-advisor.css">
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">⚔️ Feudal Forum</a>
+    <a href="/" class="back-btn">← Back to Realm</a>
+  </header>
+
+  <main class="advisor-container">
+    <div class="advisor-header">
+      <div class="advisor-avatar">🤖</div>
+      <h1>The Royal Advisor</h1>
+      <p>Seek wisdom on ranks, points, and the laws of the realm</p>
+    </div>
+
+    <div class="chat-container">
+      <div class="suggested-questions">
+        <button class="suggested-btn" data-question="How do I rank up?">How do I rank up?</button>
+        <button class="suggested-btn" data-question="What can Emperors do?">What can Emperors do?</button>
+        <button class="suggested-btn" data-question="How many points for Duke?">Points for Duke?</button>
+        <button class="suggested-btn" data-question="Can Citizens post images?">Can Citizens post?</button>
+        <button class="suggested-btn" data-question="What is execution?">What is execution?</button>
+        <button class="suggested-btn" data-question="Daily stipend amounts?">Stipend amounts?</button>
+      </div>
+
+      <div class="messages-area" id="messagesArea">
+        <div class="message advisor">
+          <div class="message-header">🤖 Royal Advisor</div>
+          <div class="message-content">
+            Greetings, my liege. I am thy Royal Advisor, keeper of knowledge for the Feudal Forum.
+            Ask me of ranks, points, decrees, or the laws of our realm. I shall guide thee.
+          </div>
+        </div>
+      </div>
+
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="message-header">🤖 Royal Advisor is thinking</div>
+        <div class="typing-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <input
+          type="text"
+          class="question-input"
+          id="questionInput"
+          placeholder="Ask thy question, noble..."
+          maxlength="500"
+        >
+        <button class="send-btn" id="sendBtn">Send</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/public/js/royal-advisor.js"></script>
+</body>
+</html>
